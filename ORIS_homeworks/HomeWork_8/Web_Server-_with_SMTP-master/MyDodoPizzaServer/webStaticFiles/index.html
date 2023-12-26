@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1835, initial-scale=1.0" />
+    <title>Работа в Додо Пицце</title>
+
+    <style>
+      @font-face {
+        font-family: "Dodo Rounded v2";
+        src: url("static/fonts/DodoRounded_v2-Regular.fc64161.woff2");
+        font-weight: 400;
+      }
+
+      @font-face {
+        font-family: "Dodo Rounded v2";
+        src: url("static/fonts/DodoRounded_v2-Medium.bc435e3.woff");
+        font-weight: 500;
+      }
+
+      @font-face {
+        font-family: "Dodo Rounded v2";
+        src: url("static/fonts/DodoRounded_v2-Bold.16f4a88.woff");
+        font-weight: 700;
+      }
+
+      * {
+        font-family: "Dodo Rounded v2";
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .header {
+        justify-content: space-between;
+        padding: 48px 280px 24px;
+        display: flex;
+        align-items: center;
+      }
+      .header-right_side {
+        align-items: center;
+        display: flex;
+      }
+      .header__form-btn {
+        width: 225px;
+        height: 56px;
+        display: inline-block;
+        background: #efe41a;
+        color: #000000;
+        padding: 10px 19px;
+        border-radius: 27px;
+        font-weight: 500;
+        text-decoration: none;
+        font-size: 22px;
+        line-height: 30px;
+      }
+
+      .header__right-img {
+        display: inline-block;
+      }
+
+      .everyone_is_important_section {
+        justify-content: space-evenly;
+        padding: 64px 280px;
+        display: flex;
+      }
+      .everyone_is_important_section__left-side {
+        margin-right: 80px;
+      }
+      .everyone_is_important_section__left-side h2 {
+        margin: 0px 0px 10px;
+        font-size: 80px;
+        line-height: 88px;
+      }
+      .everyone_is_important_section__right_side {
+        font-size: 22px;
+        line-height: 36px;
+        max-width: 476px;
+      }
+
+      .video_section {
+        padding: 0px 280px;
+      }
+      .video_section h2 {
+        padding: 0;
+        margin: 0px 0px 5px 20px;
+        font-size: 46px;
+        transform: rotate(-2.5deg);
+        font-weight: 500;
+      }
+      .screenshot_video {
+        margin-left: -100px;
+      }
+
+      .vacancies_section {
+        padding: 50px 280px;
+      }
+      .vacancies_section h2 {
+        margin-bottom: 24px;
+        font-size: 46px;
+        font-weight: 500px;
+      }
+      .vacancies_section p {
+        margin: 0px 0px 36px;
+        font-size: 22px;
+      }
+
+      .vacancies_cards_section {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 30px;
+      }
+
+      .vacancy_card {
+        width: 206px;
+        height: 268px;
+        position: relative;
+      }
+
+      .vacancy_photo {
+        border-radius: 50px;
+        width: 206px;
+        height: 268px;
+      }
+      .vacancy_btn {
+        position: absolute;
+        top: 200px;
+        left: 10px;
+        background: #efe41a;
+        color: #000000;
+        padding: 5px 8px;
+        border-radius: 27px;
+        font-size: 20px;
+        line-height: 20px;
+        font-weight: 400;
+      }
+
+      .why_people_like_dodo_section {
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+        padding: 80px 280px;
+      }
+      .why_people_like_dodo_section h1 {
+        margin-bottom: 24px;
+        padding: 0;
+        max-width: 730px;
+        font-size: 46px;
+      }
+      .text p {
+        line-height: 36px;
+      }
+      .why_people_like_dodo_section p {
+        max-width: 730px;
+        font-size: 22px;
+      }
+
+      .icons_section {
+        display: inline-block;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-left: 200px;
+        max-width: 500px;
+        max-height: 500px;
+      }
+      .advantage_item {
+        margin-right: 50px;
+        display: inline-block;
+        position: relative;
+      }
+      .advantage_item img {
+        display: flex;
+        width: 53px;
+        height: 53px;
+        margin-bottom: -20px;
+      }
+      .advantage_item p {
+        font-size: 26px;
+      }
+
+      .first_phrase {
+        position: relative;
+        background: #efe41a;
+        color: #000000;
+        padding: 5px 8px;
+        border-radius: 27px;
+        text-decoration: none;
+        font-size: 20px;
+        line-height: 20px;
+        font-weight: 500;
+      }
+
+      .second_phrase {
+        margin-top: -27px;
+        font-weight: 500;
+        border-radius: 18.8248px 20.7073px 20.7073px 3.76496px;
+        padding: 2.76496px 16.0011px 1.94124px;
+        background-color: #efe41a;
+        position: relative;
+      }
+
+      .adv_text {
+        display: inline-block;
+      }
+
+      .support_section {
+        padding: 80px 260px;
+      }
+
+      .support_section h1 {
+        margin: 0px 0px 24px;
+        max-width: 750px;
+        font-size: 46px;
+      }
+      .support_section p {
+        margin: 0px 0px 40px;
+        max-width: 750px;
+        font-size: 22px;
+        line-height: 36px;
+      }
+
+      .support_card {
+        margin-right: 20px;
+        display: inline-flex;
+        border-radius: 64px;
+        width: 408px;
+        height: 605px;
+      }
+      .support_card_text {
+        padding: 35px 45px;
+      }
+      .support_card_text h1 {
+        font-size: 32px;
+      }
+      .support_card_text p {
+        line-height: 25px;
+
+        font-size: 20px;
+      }
+      .support_icon {
+        width: 72px;
+        height: 72px;
+      }
+
+      .fill_the_form_section h2 {
+        margin: 0px 0px 40px;
+        padding: 0px;
+        font-size: 46px;
+      }
+
+      .fill_the_form_section {
+        padding: 100px 260px 80px;
+      }
+
+      .location_section {
+        vertical-align: top;
+        width: 600px;
+        display: inline-block;
+        margin-right: 40px;
+      }
+
+      select {
+        background-color: white;
+        font-size: 20px;
+        color: black;
+        width: 100%;
+        padding: 22px 18px;
+        border: 0;
+        border: 2px solid #eee;
+        border-radius: 17px;
+        margin-bottom: 25px;
+      }
+      .input_text {
+        background-color: white;
+        font-size: 20px;
+        color: black;
+        width: 100%;
+        padding: 22px 18px;
+        border: 0;
+        border: 2px solid #eee;
+        border-radius: 17px;
+        margin-bottom: 25px;
+      }
+      .data_phone_section {
+        display: flex;
+      }
+      .data_phone_section input {
+        margin-right: 25px;
+      }
+      .location_section p {
+        font-size: 18px;
+        margin: 0px;
+        color: rgba(0, 0, 0, 0.3);
+      }
+
+      label {
+        font-size: 18px;
+        position: relative;
+        padding-left: 30px;
+        cursor: pointer;
+      }
+      label a {
+        text-decoration: none;
+        color: #ed771e;
+      }
+
+      label input[type="checkbox"] {
+        position: absolute;
+        width: 0;
+        height: 0;
+      }
+
+      label span {
+        position: absolute;
+
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background-color: #ffe2ce;
+        transition: 0.3s background-color;
+      }
+
+      label span:after {
+        content: "";
+        position: absolute;
+        display: none;
+
+        left: 6px;
+        top: 2px;
+        width: 4px;
+        height: 10px;
+        border: solid rgb(223, 95, 31);
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
+      }
+      label:hover span {
+        background-color: #ffe2ce;
+      }
+
+      label input:checked ~ span {
+        background-color: #ffe2ce;
+      }
+      label input:checked ~ span:after {
+        display: block;
+      }
+
+      .form_btn {
+        justify-content: center;
+        display: flex;
+        margin-top: 50px;
+        font-size: 22px;
+        padding: 20px;
+        border-radius: 64px;
+        line-height: 22px;
+        width: 400px;
+        background-color: #ed771e;
+        border: 0;
+      }
+      .form_btn p {
+        text-align: center;
+      }
+
+      .questions_section {
+        height: 1200px;
+        padding: 80px 260px;
+      }
+      .questions_section_left_side h2 {
+        margin: 0px 0px 24px;
+        font-size: 46px;
+      }
+      .questions_section_left_side p {
+        margin: 5px 0px;
+        font-size: 22px;
+        line-height: 36px;
+      }
+
+      .questions_section_left_side {
+        display: inline-block;
+        width: 40%;
+      }
+      .questions_section_left_side a {
+        overflow: auto;
+        float: left;
+        text-decoration: none;
+        color: #ed771e;
+        font-size: 22px;
+      }
+
+      .questions_section_right_side h3 {
+        margin: 0px 0px 32px;
+        display: inline-block;
+        font-size: 32px;
+        margin-right: 30px;
+      }
+
+      .question_card {
+        background-color: #f8f8f8;
+        border-radius: 27px;
+      }
+
+      .question_card p {
+        padding: 5px 40px 30px 40px;
+        font-size: 16px;
+      }
+
+      .question_card h4 {
+        margin: 0;
+        padding: 30px 40px 0px 40px;
+        font-size: 22px;
+      }
+      .questions_section_right_side {
+        width: 60%;
+        float: right;
+      }
+      footer {
+        padding: 50px 260px;
+      }
+      .footer_links_section {
+        vertical-align: top;
+
+        display: inline-block;
+        margin-right: 85px;
+      }
+      .footer_column {
+        list-style: none;
+        color: grey;
+      }
+      ul {
+        padding: 0;
+      }
+      .footer_column li {
+        margin-bottom: 10px;
+      }
+      .footer_column li:first-of-type {
+        color: #000000;
+      }
+      .google_play {
+        margin-right: 10px;
+        width: 139px;
+        height: 40px;
+      }
+      .app_store {
+        width: 124px;
+        height: 40px;
+      }
+      .img_wrapper {
+        display: inline-block;
+      }
+      .footer__bottom-links {
+        padding-top: 50px;
+      }
+      .bottom-links__item {
+        display: inline;
+        margin-right: 10px;
+        font-size: 16px;
+        color: grey;
+      }
+      .bottom-links__item a {
+        text-decoration: none;
+        color: #000000;
+        display: inline-block;
+      }
+      .bottom-links__item img {
+        position: relative;
+        top: 5px;
+      }
+      .footer_bottom {
+        margin-top: 40px;
+        border-top: solid 1px rgba(0, 0, 0, 0.3);
+      }
+      .footer_bottom__item {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+      }
+      .footer_bottom__item p {
+        margin-right: 20px;
+        margin-left: 20px;
+        font-size: 16px;
+      }
+      .footer_bottom__item p:last-of-type {
+        color: #808080;
+        margin-left: 250px;
+      }
+      .footer_bottom__item a {
+        text-decoration: none;
+        color: #808080;
+        margin: 0px 16px;
+      }
+      .footer_adress {
+        color: #808080;
+      }
+
+      .main-container {
+        min-width: 1835px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="main-container">
+      <div class="header">
+        <!-- лого Додо -->
+        <div class="header__logo">
+          <svg
+            width="184"
+            height="64"
+            viewBox="0 0 184 64"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            data-v-1e009ed9=""
+          >
+            <g clip-path="url(#clip0_335_4486)">
+              <path
+                d="M89.5483 37.9169H76.6149C75.1295 37.9169 74.3257 38.9419 74.3257 40.1858V55.039C74.3257 56.4996 75.3773 57.3378 76.6776 57.3378C77.9461 57.3378 78.9668 56.4986 78.9668 55.039V42.4227H87.2283V55.0379C87.2283 56.4986 88.249 57.3368 89.5494 57.3368C90.8178 57.3368 91.8704 56.4666 91.8704 55.0059V40.1848C91.8694 38.9419 91.0347 37.9169 89.5483 37.9169Z"
+                fill="currentColor"
+              ></path>
+              <path
+                d="M112.075 37.9169H111.89C110.529 37.9169 109.631 38.6003 108.672 39.968L101.122 50.719V40.2157C101.122 38.7551 100.194 37.9169 98.9251 37.9169C97.6258 37.9169 96.6667 38.7561 96.6667 40.2157V54.5404C96.6667 56.0939 97.6566 57.151 99.2345 57.151H99.4514C100.906 57.151 101.834 56.4057 102.732 55.0999L110.282 44.3489V54.8511C110.282 56.3117 111.21 57.151 112.509 57.151C113.778 57.151 114.737 56.3117 114.737 54.8511V40.5264C114.737 38.911 113.778 37.9169 112.075 37.9169Z"
+                fill="currentColor"
+              ></path>
+              <path
+                d="M137.882 52.6452H136.706V40.0299C136.706 38.5693 135.654 37.7301 134.354 37.7301C133.085 37.7301 132.064 38.5693 132.064 40.0299V52.6452H124.019V40.0299C124.019 38.5693 123.029 37.7301 121.698 37.7301C120.399 37.7301 119.378 38.5693 119.378 40.0299V54.8831C119.378 56.1259 120.214 57.151 121.667 57.151H135.592V59.2021C135.592 60.6627 136.581 61.5009 137.85 61.5009C139.149 61.5009 140.139 60.6617 140.139 59.2021V54.945C140.14 53.4214 139.244 52.6452 137.882 52.6452Z"
+                fill="currentColor"
+              ></path>
+              <path
+                d="M161.12 52.6452H159.944V40.0299C159.944 38.5693 158.893 37.7301 157.592 37.7301C156.324 37.7301 155.302 38.5693 155.302 40.0299V52.6452H147.258V40.0299C147.258 38.5693 146.268 37.7301 144.937 37.7301C143.637 37.7301 142.616 38.5693 142.616 40.0299V54.8831C142.616 56.1259 143.452 57.151 144.906 57.151H158.83V59.2021C158.83 60.6627 159.82 61.5009 161.088 61.5009C162.388 61.5009 163.378 60.6617 163.378 59.2021V54.945C163.379 53.4214 162.481 52.6452 161.12 52.6452Z"
+                fill="currentColor"
+              ></path>
+              <path
+                d="M183.74 53.888L177.427 40.0919C176.715 38.5693 175.725 37.9169 174.302 37.9169H174.055C172.569 37.9169 171.58 38.5693 170.868 40.0919L164.556 53.888C163.937 55.2547 164.37 56.4666 165.607 56.9332C166.72 57.3688 167.835 57.12 168.454 55.8152L169.877 52.801C171.146 53.2366 172.724 53.4534 174.209 53.4534C175.787 53.4534 177.18 53.2356 178.355 52.801L179.717 55.7843C180.305 57.089 181.511 57.3378 182.594 56.9332C183.832 56.4666 184.327 55.1928 183.74 53.888ZM174.209 49.3203C173.25 49.3203 172.228 49.1964 171.455 48.9786L174.147 42.9512L176.839 48.9786C176.096 49.1964 175.168 49.3203 174.209 49.3203Z"
+                fill="currentColor"
+              ></path>
+              <path
+                d="M95.1187 21.8302H93.9427V9.3698C93.9427 8.12696 93.107 7.10193 91.6535 7.10193H81.0401C79.8025 7.10193 78.9668 7.94116 78.9668 9.40077V12.415C78.9668 14.5899 78.9359 16.2674 78.5648 18.0697C78.1937 19.841 77.7291 20.928 77.0486 21.8292H76.5234C75.038 21.8292 74.3267 22.7613 74.3267 24.0981V28.3861C74.3267 29.8467 75.3166 30.6849 76.5861 30.6849C77.8854 30.6849 78.8753 29.8457 78.8753 28.3861V26.335H92.8305V28.3861C92.8305 29.8467 93.8204 30.6849 95.0889 30.6849C96.3882 30.6849 97.3781 29.8457 97.3781 28.3861V24.0981C97.377 22.7623 96.6657 21.8302 95.1187 21.8302ZM89.3016 21.8302H81.7823C82.2469 20.8361 82.618 19.935 82.9274 18.5683C83.2368 17.1386 83.3612 15.7089 83.392 13.8446L83.4228 11.6077H89.3016V21.8302Z"
+                fill="currentColor"
+              ></path>
+              <path
+                d="M108.27 6.94606C102.732 6.94606 98.4615 11.1412 98.4615 16.7339C98.4615 22.3886 102.732 26.5218 108.27 26.5218C113.809 26.5218 118.079 22.2338 118.079 16.672C118.079 11.0792 113.809 6.94606 108.27 6.94606ZM108.27 22.1409C105.238 22.1409 103.041 19.841 103.041 16.703C103.041 13.6268 105.238 11.327 108.27 11.327C111.333 11.327 113.499 13.6258 113.499 16.703C113.499 19.841 111.426 22.1409 108.27 22.1409Z"
+                fill="currentColor"
+              ></path>
+              <path
+                d="M152.364 6.94606C146.826 6.94606 142.556 11.1412 142.556 16.7339C142.556 22.3886 146.826 26.5218 152.364 26.5218C157.903 26.5218 162.173 22.2338 162.173 16.672C162.173 11.0792 157.903 6.94606 152.364 6.94606ZM152.364 22.1409C149.332 22.1409 147.135 19.841 147.135 16.703C147.135 13.6268 149.333 11.327 152.364 11.327C155.428 11.327 157.593 13.6258 157.593 16.703C157.593 19.841 155.52 22.1409 152.364 22.1409Z"
+                fill="currentColor"
+              ></path>
+              <path
+                d="M139.367 21.8302H138.191V9.3698C138.191 8.12696 137.355 7.10193 135.902 7.10193H125.289C124.051 7.10193 123.215 7.94116 123.215 9.40077V12.415C123.215 14.5899 123.184 16.2674 122.813 18.0697C122.442 19.841 121.978 20.928 121.297 21.8292H120.771C119.285 21.8292 118.574 22.7613 118.574 24.0981V28.3861C118.574 29.8467 119.564 30.6849 120.833 30.6849C122.133 30.6849 123.123 29.8457 123.123 28.3861V26.335H137.078V28.3861C137.078 29.8467 138.068 30.6849 139.336 30.6849C140.636 30.6849 141.625 29.8457 141.625 28.3861V24.0981C141.627 22.7623 140.914 21.8302 139.367 21.8302ZM133.55 21.8302H126.031C126.495 20.8361 126.866 19.935 127.176 18.5683C127.485 17.1386 127.61 15.7089 127.64 13.8446L127.671 11.6077H133.55V21.8302Z"
+                fill="currentColor"
+              ></path>
+              <path
+                d="M27.8169 0.995098C45.8715 0.995098 59.7373 13.4668 59.7373 31.9763C59.7373 50.5848 45.8715 63.2588 27.8169 63.2588H7.56863C3.47848 63.2588 0.0863037 60.543 0.0863037 55.8163V8.7391C0.0863037 4.01135 3.47848 0.994064 7.56863 0.994064H27.8169V0.995098Z"
+                fill="#FF6900"
+              ></path>
+              <path
+                d="M14.1742 33.6186C14.1742 27.8844 12.3465 22.6705 12.9468 19.4044L12.8009 19.2155C10.7214 21.3946 9.3686 20.8186 9.2216 20.1166C8.92556 18.7117 11.3597 16.992 12.7505 16.3943C12.7772 16.3025 12.8132 16.2064 12.8512 16.1094C11.5499 16.3107 10.0213 16.1455 9.96788 15.2103C9.90518 14.1017 12.1214 13.1117 15.0181 13.3574C15.0726 13.311 15.1291 13.2645 15.1857 13.2181C15.0037 13.1448 14.8084 13.0539 14.5648 12.928C13.8165 12.5409 13.6345 11.8978 13.8792 11.4302C14.1475 10.9161 14.9667 10.7159 15.6308 10.7303C16.6731 10.752 17.5602 11.0059 18.2088 11.2702C18.2818 11.2392 18.3558 11.2083 18.4257 11.1814C18.1852 10.9925 17.9755 10.7871 17.8532 10.5765C17.6743 10.2679 17.6301 9.84361 17.9765 9.56903C18.3815 9.248 19.4094 9.13445 20.3387 9.98193C20.5309 10.1564 20.6933 10.3267 20.8403 10.4898C20.9441 10.4702 21.048 10.4495 21.1528 10.433C20.9997 10.1956 20.8773 9.94787 20.8383 9.71768C20.7838 9.40284 20.8866 9.06426 21.2546 8.94452C21.6565 8.81342 22.1653 9.0209 22.4295 9.41419C22.7122 9.83535 22.8859 10.3535 22.9949 10.7221C20.9462 10.9615 15.5126 12.2075 15.5126 18.8026C15.5126 25.2335 20.8331 31.9897 20.8331 41.9582C20.8249 45.5804 20.0293 49.2139 16.7594 53.4462C14.2348 56.7143 10.2238 59.8679 3.96989 62.4568C5.04203 62.9822 6.26938 63.2588 7.56869 63.2588H9.81677C14.9904 60.3809 17.5581 57.7425 19.3375 55.2671C22.8068 56.8196 26.1445 57.4865 29.1522 57.4865C34.7914 57.4865 39.598 54.8779 42.1041 50.2256C44.6832 48.671 46.3937 45.4751 46.5016 43.1917C48.1083 41.1623 48.4054 38.6003 47.912 36.8712C47.7938 36.4594 47.4607 36.447 46.883 36.8C41.8019 39.8596 36.8812 41.3161 32.1856 41.3161C29.3383 41.3161 26.4179 40.8619 23.3104 39.9587C23.0884 36.6142 22.4048 33.8095 22.1499 32.1094C21.7871 29.8643 22.3031 28.2034 24.7568 28.2034C26.5567 28.2034 29.8872 28.6627 32.5485 29.8777C35.1841 31.0813 36.7527 33.4503 37.8485 33.4503C38.2936 33.4503 38.7613 33.1726 38.7613 32.2271C38.7613 30.3112 38.0808 27.2268 37.2348 26.1275C39.7008 25.9861 41.6601 26.0119 42.762 26.1368C45.0584 26.5373 45.1664 27.6945 45.6187 28.449C46.0709 29.2036 46.8378 29.5319 47.7598 29.5319C49.4672 29.5319 50.5322 28.6472 50.5322 25.4545C50.5322 18.4413 46.1234 15.0421 41.4997 15.0421C37.7036 15.0421 36.2377 15.8803 32.6328 15.8803C30.0753 15.8803 27.9567 10.655 25.0507 9.96851C23.7669 7.10193 20.8886 6.77884 19.1155 8.21884C17.5057 7.2351 14.9883 7.76568 14.8845 9.58142C13.0321 9.00542 10.6401 10.0088 11.6712 12.4532C7.14209 12.5822 6.29713 16.6039 9.37065 17.0529C5.41414 19.3012 7.22227 23.1845 10.5425 22.3587C10.7769 25.1169 11.8901 29.5701 11.8901 32.6452C11.8901 36.9218 9.95863 37.9148 7.31787 37.9148C5.23117 37.9148 2.16793 37.1541 0.0925293 36.5595V39.5417C2.1926 40.0661 5.34218 40.7391 7.7054 40.7391C11.8654 40.7401 14.1742 38.2885 14.1742 33.6186ZM23.3505 43.3063C26.201 44.1012 30.1411 44.5254 33.4099 44.2952C39.155 43.8906 43.4682 41.7425 45.8962 40.1786C44.4376 43.8782 38.9669 46.176 33.6628 46.8263C33.6288 47.0957 33.5888 47.359 33.5404 47.6129C37.5196 47.4003 41.2983 46.1017 43.0108 44.9156C42.0312 48.5543 37.1639 50.017 32.7458 50.2276C32.6215 50.5135 32.4899 50.783 32.3542 51.039C34.9271 51.0854 37.3911 50.6065 38.859 50.1419C37.5381 52.6741 32.9792 54.6746 28.336 54.6746C26.054 54.6746 23.2066 54.2276 20.7355 53.0467C22.521 49.7662 23.2087 46.4041 23.3505 43.3063ZM34.8428 22.7933C35.4688 20.9197 36.0126 19.5066 37.0282 18.4289C38.0983 17.2934 39.2866 16.9383 41.8955 16.9383C45.4984 16.9383 48.5082 20.5956 48.5082 25.7074C48.5082 26.4671 47.4926 26.4619 47.1667 25.7672C45.9414 23.5943 44.2813 23.2815 41.6663 23.0885C39.7368 22.975 37.4096 23.1391 35.29 23.2299C34.8942 23.2506 34.7832 22.9729 34.8428 22.7933Z"
+                fill="#000"
+              ></path>
+              <path
+                d="M0.0863037 48.6369C2.26347 48.2023 4.40568 47.7997 4.40568 47.7997L4.67911 46.6209C3.6964 46.5714 1.74744 46.5941 0.0863037 46.6395V48.6369Z"
+                fill="#000"
+              ></path>
+              <path
+                d="M23.551 13.439C24.3116 13.1819 25.4043 13.9355 25.9892 15.1164C26.5741 16.2973 26.4302 17.4679 25.6695 17.7197C24.915 17.9881 23.8275 17.2346 23.2395 16.0475C23.1603 15.8875 23.0976 15.7285 23.0452 15.5716L23.1778 15.5345C23.4214 15.7667 23.7123 15.8307 23.9066 15.7058C24.1739 15.5293 24.1461 15.0607 23.92 14.656C23.7586 14.3247 23.3855 13.9778 23.0771 14.0036L23.0236 13.9334C23.1388 13.697 23.3135 13.5216 23.551 13.439ZM28.8828 25.3223C25.4763 24.5708 21.748 23.5778 19.7599 20.6431C19.7229 20.5884 19.6551 20.5636 19.5914 20.5822C19.5287 20.5997 19.4834 20.6576 19.4803 20.7236C19.4732 20.8836 19.4947 21.0591 19.5307 21.2336L19.2614 21.3357C18.7372 20.5946 18.6302 19.6945 19.1504 19.0472C19.8987 18.1161 21.417 18.2111 22.3236 18.7861L22.2085 19.0369C21.7223 18.9554 21.2587 18.9554 20.8968 19.1763C20.5895 19.3641 20.5473 19.6428 20.7365 19.9959C22.3873 23.0772 27.1878 23.7461 32.8918 23.3001C33.4808 23.2537 33.6165 22.9874 33.6925 22.7025C34.188 20.7185 35.0864 18.9492 36.4238 17.601C35.3835 17.7476 34.4162 17.7806 33.5723 17.8271C30.6262 18.0139 28.9414 17.6258 28.4151 17.2036L28.5107 16.9466C28.8243 17.055 29.1501 17.0797 29.2169 16.9868C29.3084 16.8619 29.2385 16.7835 29.0946 16.6565C28.5354 16.1301 26.0221 13.5432 26.0273 13.5577C25.7559 11.3703 22.5837 11.2908 21.3193 13.4431L20.8896 13.3275C21.015 12.8557 21.2032 12.4707 21.3779 12.191C18.7289 12.7917 17.222 15.1794 16.9485 17.4854C15.7746 27.3982 30.7455 25.1076 35.0248 29.0777C35.106 29.1417 35.3095 29.4328 35.4555 29.249C35.622 28.7092 33.7367 26.401 28.8828 25.3223Z"
+                fill="#fff"
+              ></path>
+              <path
+                d="M45.892 40.1724C43.4651 41.7352 39.1478 43.8865 33.4057 44.2911C30.139 44.5213 26.1938 44.095 23.3454 43.3001C23.3012 44.2539 23.2056 45.2387 23.0421 46.2328C24.6477 46.6467 27.5064 47.1938 31.6305 47.3115C31.4465 48.4253 30.3209 52.2044 27.4386 54.6478C32.6923 54.8687 37.4527 52.8176 38.8528 50.1357C37.3849 50.6003 34.9199 51.0792 32.348 51.0328C32.4837 50.7778 32.6153 50.5074 32.7396 50.2214C37.1556 50.0119 42.025 48.5461 43.0046 44.9094C41.292 46.0945 37.5103 47.3941 33.5342 47.6067C33.5825 47.3528 33.6226 47.0906 33.6566 46.8201C38.9597 46.1708 44.4344 43.8689 45.892 40.1724Z"
+                fill="#fff"
+              ></path>
+            </g>
+            <defs>
+              <clipPath id="clip0_335_4486">
+                <rect width="184" height="64" fill="white"></rect>
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <div class="header-right_side">
+          <a href="#" class="header__form-btn">Заполнить анкету</a>
+          <img
+            src="static\images_for_DodoPizza\rabota_na_ravnyx.png"
+            class="header__right-img"
+          />
+        </div>
+      </div>
+
+      <div class="everyone_is_important_section">
+        <div class="everyone_is_important_section__left-side">
+          <h2>Для нас важен <br />каждый</h2>
+          <img src="static/images_for_DodoPizza/slogan.png" class="slogan" />
+        </div>
+        <p class="everyone_is_important_section__right_side">
+          Людям нравится работать, когда они чувствуют свою ценность. В большой
+          компании человек может теряться, чувствовать себя менее значимым.
+          <br />
+          <br />
+          Мы в Додо уверены: чем больше компания, тем больше внимания должно
+          быть к тем, <br />кто с ней работает.
+        </p>
+      </div>
+      <div class="video_section">
+        <h2>5 личных видео-историй о Додо изнутри</h2>
+        <img
+          src="static/images_for_DodoPizza/Screenshot-video.png"
+          class="screenshot_video"
+        />
+      </div>
+
+      <div class="vacancies_section">
+        <div class="vacancies-section__text">
+          <h2>Кем можно быть в пиццерии</h2>
+          <p>
+            Ищем тех, кто хочет приходить к нам с удовольствием каждый день.
+            Присоединяйтесь!
+          </p>
+        </div>
+        <div class="vacancies_cards_section">
+          <div class="vacancy_card">
+            <img
+              src="static/images_for_DodoPizza/chelik1.png"
+              class="vacancy_photo"
+            />
+            <p class="vacancy_btn">Курьер</p>
+          </div>
+          <div class="vacancy_card">
+            <img
+              src="static/images_for_DodoPizza/chelik2.png"
+              class="vacancy_photo"
+            />
+            <p class="vacancy_btn">Кассир</p>
+          </div>
+          <div class="vacancy_card">
+            <img
+              src="static/images_for_DodoPizza/chelik3.png"
+              class="vacancy_photo"
+            />
+            <p class="vacancy_btn">Пиццамейкер</p>
+          </div>
+          <div class="vacancy_card">
+            <img
+              src="static/images_for_DodoPizza/chelik4.png"
+              class="vacancy_photo"
+            />
+            <p class="vacancy_btn">Клинер</p>
+          </div>
+          <div class="vacancy_card">
+            <img
+              src="static/images_for_DodoPizza/chelik5.jpg"
+              class="vacancy_photo"
+            />
+            <p class="vacancy_btn">Менеджер</p>
+          </div>
+          <div class="vacancy_card">
+            <img
+              src="static/images_for_DodoPizza/chelik6.png"
+              class="vacancy_photo"
+            />
+            <p class="vacancy_btn">Управляющий</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="why_people_like_dodo_section">
+        <div class="text">
+          <h1>Почему людям нравится <br />работать в Додо?</h1>
+          <p>
+            Додо Пицца — международная сеть пиццерий родом из Сыктывкара. Мы уже
+            открыли более 800 пиццерий в 17 странах и продолжаем открывать
+            новые.
+            <br />
+            <br />
+            Обычно люди приходят в Додо, чтобы просто поесть или отдохнуть.
+            Именно команда пиццерии делает их опыт незабываемым: создает
+            атмосферу уюта, готовит и доставляет ароматную пиццу.
+            <br />
+            <br />
+            Чтобы команда дарила радость сотням клиентов, мы уделяем внимание ее
+            комфорту.
+          </p>
+        </div>
+        <div class="icons_section">
+          <div class="advantage_item">
+            <img src="static/images_for_DodoPizza/icon1.png" />
+            <div class="adv_text">
+              <p class="first_phrase">Гибкий</p>
+              <p class="second_phrase">график</p>
+            </div>
+          </div>
+          <div class="advantage_item">
+            <img src="static/images_for_DodoPizza/icon2.png" />
+            <div class="adv_text">
+              <p class="first_phrase">Старт</p>
+              <p class="second_phrase">без опыта</p>
+            </div>
+          </div>
+          <div class="advantage_item">
+            <img src="static/images_for_DodoPizza/icon3.png" />
+            <div class="adv_text">
+              <p class="first_phrase">Рядом</p>
+              <p class="second_phrase">с домом</p>
+            </div>
+          </div>
+          <div class="advantage_item">
+            <img src="static/images_for_DodoPizza/icon4.png" />
+            <div class="adv_text">
+              <p class="first_phrase">Быстрый</p>
+              <p class="second_phrase">рост</p>
+            </div>
+          </div>
+          <div class="advantage_item">
+            <img src="static/images_for_DodoPizza/icon5.png" />
+            <div class="adv_text">
+              <p class="first_phrase">Отсутствие</p>
+              <p class="second_phrase">штрафов</p>
+            </div>
+          </div>
+          <div class="advantage_item">
+            <img src="static/images_for_DodoPizza/icon6.png" />
+            <div class="adv_text">
+              <p class="first_phrase">Стабильная</p>
+              <p class="second_phrase">оплата</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="support_section">
+        <h1>Забота о каждом</h1>
+        <p>
+          Для удовольствия от работы людям мало лишь оплаты и удобного графика.
+          Заботу о каждом мы проявляем через уважение, открытость и развитие
+          тех, кто этого хочет.
+        </p>
+
+        <div class="support_card_section">
+          <div class="support_card" style="background-color: #c5a6cf">
+            <div class="support_card_text">
+              <img
+                src="static/images_for_DodoPizza/thumb_up.png"
+                class="support_icon"
+              />
+              <h1>Уважение — основа работы в команде</h1>
+              <p>
+                Общаться уважительно — такая же норма, как готовить пиццу по
+                рецепту. И так же важно.
+              </p>
+              <p>
+                Каждый в команде знает, что для хороших отношений нет разницы в
+                национальности, опыте работы или цвете волос. Мы ценим друг
+                друга и вклад каждого в общее дело.
+              </p>
+            </div>
+          </div>
+
+          <div class="support_card" style="background-color: #ed771e">
+            <div class="support_card_text">
+              <img
+                src="static/images_for_DodoPizza/message.png"
+                class="support_icon"
+              />
+              <h1>Открытость <br />во всем</h1>
+              <p>
+                В Додо делятся опытом, признаются в ошибках и всегда готовы
+                услышать, что можно улучшить.
+              </p>
+              <p>
+                Раз в месяц собираем мнения команды о том, что нравится, а что
+                нет. И отвечаем на все комментарии. Можно не бояться говорить о
+                неудобстве — мы прислушаемся, чтобы сделать условия комфортней.
+              </p>
+            </div>
+          </div>
+          <div class="support_card" style="background-color: #efe41a">
+            <div class="support_card_text">
+              <img
+                src="static/images_for_DodoPizza/arrow.png"
+                class="support_icon"
+              />
+              <h1>Развитие для тех, кто этого хочет</h1>
+              <p>
+                Из тех, кто пришел ненадолго, многие остаются. У каждого есть
+                возможность расти — например, стать менеджером и управлять
+                командой. Мы обучаем этому прямо в пиццерии.
+              </p>
+              <p>
+                А&nbsp;если карьерного роста не&nbsp;хочется, можно продолжать
+                работать на&nbsp;любимой должности и&nbsp;стабильно
+                зарабатывать.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fill_the_form_section">
+        <h2>Заполните анкету</h2>
+        <form action="send-email" enctype="multipart/form-data" method="POST">
+          <div class="location_section">
+            <div class="select_form_section">
+              <select name="city">
+                <option value="Almetyevsk">Альметьевск</option>
+                <option value="Saint_Petersburg">Санкт-Петербург</option>
+                <option value="Moscow">Москва</option>
+                <option value="Kazan">Казань</option>
+              </select>
+            </div>
+            <div class="select_form_section">
+              <select name="addressOfPizzeria">
+                <option value="Almetyevsk">Альметьевск (ул. Ленина,94)</option>
+                <option value="Corona">Тц Корона (ул.Герцена, 3в)</option>
+                <option value="Lenina">ул.Ленина 100</option>
+              </select>
+            </div>
+            <div class="select_form_section">
+              <select name="jobPosition">
+                <option value="Pizzamaker">Пиццамейкер</option>
+                <option value="Corona">Курьер</option>
+                <option value="Lenina">К</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="location_section">
+            <input
+              type="text"
+              class="input_text"
+              placeholder="Имя"
+              name="userName"
+            />
+            <input
+              type="text"
+              class="input_text"
+              placeholder="Фамилия"
+              name="userLastName"
+            />
+            <div class="data_phone_section">
+              <input
+                type="text"
+                class="input_text"
+                placeholder="День рождения"
+              />
+              <input
+                type="tel"
+                class="input_text"
+                placeholder="Телефон"
+                name="phoneNumber"
+              />
+            </div>
+            <input
+              type="text"
+              class="input_text"
+              placeholder="Ссылка на соцсети"
+              name="socialMediaLink"
+            />
+            <p>По желанию. На случай, если не дозвонимся по телефону.</p>
+          </div>
+          <div class="agreement_checkbox">
+            <label
+              >Согласен на
+              <a href="https://rabotavdodo.ru/uploads/policy_3ac21d6f68.html"
+                >обработку персональных данных
+              </a>
+              <input type="checkbox" name="agreement" />
+              <span></span>
+            </label>
+            <button type="submit" class="form_btn">Отправить</button>
+          </div>
+        </form>
+      </div>
+      <div class="questions_section">
+        <div class="questions_section_left_side">
+          <h2>Остались вопросы ?</h2>
+          <p>
+            Здесь мы собрали самые популярные.<br />
+            Если не нашли свой вопрос, напишите нам <br />
+            на почту
+          </p>
+          <a href="#">team@dodobrands.io</a>
+        </div>
+        <div class="questions_section_right_side">
+          <h3>Курьерам</h3>
+          <h3>Работникам кухни</h3>
+          <div class="questions_card_section">
+            <div class="question_card">
+              <h4>Какие документы нужны для сотрудничества?</h4>
+              <p>
+                <b>Для граждан России: </b>паспорт, ИНН, СНИЛС, номер банковской
+                карты, права для управления автомобилем или документ, который
+                подтверждает право управления другим транспортным средством.
+                <br />
+                <br />
+                <b>Для граждан других стран: </b>узнать точную информацию можно
+                после заполнения анкеты.
+              </p>
+            </div>
+
+            <div class="question_card">
+              <h4>Как составляется график?</h4>
+              <p>
+                График формируется по согласованию с курьерами на основе данных
+                о загруженности пиццерии. Расскажите, когда вам удобно
+                доставлять заказы: весь день или несколько часов, утром или
+                вечером — мы подберем подходящий вариант.
+              </p>
+            </div>
+
+            <div class="question_card">
+              <h4>Из чего складывается вознаграждение?</h4>
+              <p>
+                Вознаграждение зависит от разных факторов, например: количества
+                доставленных заказов, километража, часов занятости или ГСМ. У
+                нас есть прозрачная система мотивации, о которой вы сможете
+                узнать на встрече с управляющим.
+              </p>
+            </div>
+
+            <div class="question_card">
+              <h4>На чем можно доставлять заказы?</h4>
+              <p>
+                Вы можете доставлять заказы на своем автомобиле или пешком — это
+                зависит от зоны доставки выбранной пиццерии. В некоторых точках
+                есть собственный транспорт: автомобили, электросамокаты,
+                электровелосипеды, велосипеды. Узнать точную информацию можно
+                после заполнения анкеты.
+              </p>
+            </div>
+
+            <div class="question_card">
+              <h4>Есть ли штрафы?</h4>
+              <p>
+                У каждого, кто честно и искренне делает свое дело, должно быть
+                право на ошибку. Поэтому мы никого не штрафуем, — это
+                противоречит ценностям Додо.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer_links_section">
+        <ul class="footer_column">
+          <li>Додо Пицца</li>
+          <li>О нас</li>
+          <li>Додо-книга</li>
+          <li>Блог "Синема ума"</li>
+          <li>Додо ИС</li>
+        </ul>
+      </div>
+      <div class="footer_links_section">
+        <ul class="footer_column">
+          <li>Ищем</li>
+          <li>В пиццерии</li>
+          <li>В контакт-центр</li>
+        </ul>
+      </div>
+      <div class="footer_links_section">
+        <ul class="footer_column">
+          <li>Партнерам</li>
+          <li>Франшиза</li>
+          <li>Инвестиции</li>
+          <li>Поставщикам</li>
+          <li>Предложить помещение</li>
+        </ul>
+      </div>
+      <div class="footer_links_section">
+        <ul class="footer_column">
+          <li>Это интересно</li>
+          <li>Почему мы готовим<br />без перчаток?</li>
+          <li>Экскурсии и мастер-классы</li>
+          <li>Корпоративные заказы</li>
+        </ul>
+      </div>
+      <div class="img_wrapper">
+        <img
+          src="static/images_for_DodoPizza/googleplay_271ed894bd.png"
+          alt="google_play"
+          class="google_play"
+        />
+        <img
+          src="static/images_for_DodoPizza/appstore_icon.png"
+          alt="app_store"
+          class="app_store"
+        />
+      </div>
+      <div class="footer__bottom-links">
+        <div class="bottom-links__item">
+          <img src="static/images_for_DodoPizza/vk_icon.png" alt="vk" />
+          <a href="https://vk.com/dodo">Вконтакте</a>
+        </div>
+        <div class="bottom-links__item">
+          <img
+            src="static/images_for_DodoPizza/youtube_icon.png"
+            alt="youtube"
+          />
+          <a href="https://www.youtube.com/dodomovie">YouTube</a>
+        </div>
+      </div>
+      <div class="footer_bottom">
+        <div class="footer_bottom__item">
+          <img
+            src="static/images_for_DodoPizza/copy-dodo.svg"
+            alt="dodo_logo"
+          />
+          <p>© 2023</p>
+          <a href="https://rabotavdodo.ru/uploads/useragreement_c31f17871d.html"
+            >Пользовательское соглашение</a
+          >
+          <a href="https://rabotavdodo.ru/uploads/policy_3ac21d6f68.html"
+            >Политика обработки персональных данных</a
+          >
+          <p>feedback@dodopizza.com</p>
+        </div>
+      </div>
+      <div class="footer_adress">
+        <p>
+          © 2023 ООО «Додо Франчайзинг»<br />
+          ОГРН 1131101001844, ИНН 1101140415 167001,<br />
+          Республика Коми, г. Сыктывкар, Октябрьский проспект, д. 16
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
